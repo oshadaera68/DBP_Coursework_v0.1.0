@@ -13,7 +13,7 @@
          </font>
       </Label>
       <Button layoutX="76.0" layoutY="75.0" mnemonicParsing="false" onAction="#saveCustomerOnAction" prefHeight="31.0" prefWidth="142.0" text="Save Customer" />
-      <Button layoutX="75.0" layoutY="127.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" text="Search Customer" />
+      <Button layoutX="75.0" layoutY="127.0" mnemonicParsing="false" onAction="#searchCustomerOnAction" prefHeight="31.0" prefWidth="142.0" text="Search Customer" />
       <Button layoutX="74.0" layoutY="181.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" text="Update Customer" />
       <Button layoutX="74.0" layoutY="234.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" text="Delete Customer" />
       <Button layoutX="75.0" layoutY="288.0" mnemonicParsing="false" text="Load All Customer" />

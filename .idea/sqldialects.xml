@@ -2,5 +2,6 @@
 <project version="4">
   <component name="SqlResolveMappings">
     <file url="file://$PROJECT_DIR$/src/controller/CustomerFormController.java" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;name&quot;:{     &quot;@qname&quot;:&quot;6fcf5022-b782-40ed-9bb5-c3d65b145e33&quot;    },    &quot;group&quot;:{     &quot;@kind&quot;:&quot;schema&quot;,     &quot;node&quot;:{      &quot;name&quot;:{       &quot;@qname&quot;:&quot;supermarket&quot;      }     }    }   }  } }}" />
+    <file url="file://$PROJECT_DIR$/src/controller/SaveCustomerFormController.java" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;name&quot;:{     &quot;@qname&quot;:&quot;6fcf5022-b782-40ed-9bb5-c3d65b145e33&quot;    },    &quot;group&quot;:{     &quot;@kind&quot;:&quot;schema&quot;,     &quot;node&quot;:{      &quot;name&quot;:{       &quot;@qname&quot;:&quot;supermarket&quot;      }     }    }   }  } }}" />
   </component>
 </project>

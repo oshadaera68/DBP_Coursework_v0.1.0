@@ -2,57 +2,20 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="746.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerFormController">
+<AnchorPane prefHeight="378.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerFormController">
    <children>
-      <Label layoutX="415.0" layoutY="14.0" text="Customer Form">
+      <Label layoutX="70.0" layoutY="21.0" text="Customer Form">
          <font>
             <Font name="Ubuntu Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtId" layoutX="33.0" layoutY="57.0" onAction="#txtIdOnAction" prefHeight="31.0" prefWidth="177.0" promptText="id" />
-      <TextField fx:id="txtTitle" layoutX="244.0" layoutY="57.0" prefHeight="31.0" prefWidth="258.0" promptText="title" />
-      <TextField fx:id="txtName" layoutX="548.0" layoutY="57.0" prefHeight="31.0" prefWidth="258.0" promptText="name" />
-      <TextField fx:id="txtAddress" layoutX="33.0" layoutY="129.0" prefHeight="31.0" prefWidth="212.0" promptText="address" />
-      <TextField fx:id="txtCity" layoutX="283.0" layoutY="128.0" prefHeight="31.0" prefWidth="196.0" promptText="city" />
-      <TextField fx:id="txtProvince" layoutX="503.0" layoutY="128.0" prefHeight="31.0" prefWidth="196.0" promptText="province" />
-      <TextField fx:id="txtPostalCode" layoutX="728.0" layoutY="128.0" prefHeight="31.0" prefWidth="158.0" promptText="postal code" />
-      <Button layoutX="81.0" layoutY="209.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="165.0" text="Add">
-         <font>
-            <Font name="Ubuntu Bold" size="17.0" />
-         </font>
-      </Button>
-      <Button layoutX="295.0" layoutY="209.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="31.0" prefWidth="147.0" text="Search">
-         <font>
-            <Font name="Ubuntu Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="492.0" layoutY="209.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="158.0" text="Update">
-         <font>
-            <Font name="Ubuntu Bold" size="17.0" />
-         </font>
-      </Button>
-      <Button layoutX="698.0" layoutY="209.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="158.0" text="Delete">
-         <font>
-            <Font name="Ubuntu Bold" size="18.0" />
-         </font>
-      </Button>
-      <TableView fx:id="tblCustomer" layoutX="22.0" layoutY="288.0" prefHeight="363.0" prefWidth="935.0">
-        <columns>
-          <TableColumn fx:id="colId" prefWidth="124.0" text="Id" />
-          <TableColumn fx:id="colTitle" prefWidth="120.0" text="title" />
-            <TableColumn fx:id="colName" prefWidth="114.0" text="name" />
-            <TableColumn fx:id="colAddress" prefWidth="136.0" text="address" />
-            <TableColumn fx:id="colCity" prefWidth="130.0" text="city" />
-            <TableColumn fx:id="colProvince" prefWidth="152.0" text="province" />
-            <TableColumn fx:id="colPostalCode" prefWidth="158.0" text="postal code" />
-        </columns>
-      </TableView>
+      <Button layoutX="76.0" layoutY="75.0" mnemonicParsing="false" onAction="#saveCustomerOnAction" prefHeight="31.0" prefWidth="142.0" text="Save Customer" />
+      <Button layoutX="75.0" layoutY="127.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" text="Search Customer" />
+      <Button layoutX="74.0" layoutY="181.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" text="Update Customer" />
+      <Button layoutX="74.0" layoutY="234.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" text="Delete Customer" />
+      <Button layoutX="75.0" layoutY="288.0" mnemonicParsing="false" text="Load All Customer" />
    </children>
 </AnchorPane>

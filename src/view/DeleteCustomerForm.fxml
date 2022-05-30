@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="299.0" prefWidth="514.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DeleteCustomerFormController">
+   <children>
+      <Label layoutX="195.0" layoutY="23.0" text="Delete Customer">
+         <font>
+            <Font name="Ubuntu Bold" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" layoutX="24.0" layoutY="71.0" onAction="#txtIdOnAction" promptText="id" />
+      <TextField fx:id="txtName" layoutX="24.0" layoutY="125.0" promptText="name" />
+      <TextField fx:id="txtTitle" layoutX="292.0" layoutY="71.0" promptText="title" />
+      <TextField fx:id="txtAddress" layoutX="292.0" layoutY="125.0" promptText="address" />
+      <TextField fx:id="txtCity" layoutX="24.0" layoutY="183.0" promptText="city" />
+      <TextField fx:id="txtProvince" layoutX="292.0" layoutY="183.0" promptText="province" />
+      <TextField fx:id="txtPostalCode" layoutX="24.0" layoutY="240.0" promptText="postal code" />
+      <Button layoutX="331.0" layoutY="243.0" mnemonicParsing="false" onAction="#deleteCustomerOnAction" prefHeight="31.0" prefWidth="114.0" text="Delete" />
+   </children>
+</AnchorPane>

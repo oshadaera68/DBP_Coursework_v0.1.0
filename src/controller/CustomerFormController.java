@@ -27,4 +27,18 @@ public class CustomerFormController {
         stage.setTitle("Search Customer");
         stage.show();
     }
+
+    public void deleteCustomerOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DeleteCustomerForm.fxml"))));
+        stage.setTitle("Delete Customer");
+        stage.show();
+    }
+
+    public void updateCustomerOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UpdateCustomerForm.fxml"))));
+        stage.setTitle("Update Customer");
+        stage.show();
+    }
 }

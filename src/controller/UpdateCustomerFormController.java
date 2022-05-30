@@ -45,7 +45,6 @@ public class UpdateCustomerFormController {
 
         try {
             PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("UPDATE customer SET custTitle=?,custName=?,custAddress=?,city=?,province=?,postalCode=? WHERE custId=?");
-           // stm.setObject(1, txtId.getText());
             stm.setObject(1, c.getTitle());
             stm.setObject(2, c.getName());
             stm.setObject(3, c.getAddress());
@@ -53,8 +52,8 @@ public class UpdateCustomerFormController {
             stm.setObject(5, c.getProvince());
             stm.setObject(6, c.getPostalCode());
             stm.setObject(7, c.getId());
-            if (stm.executeUpdate() > 0) {
 
+            if (stm.executeUpdate() > 0) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Updated").show();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again").show();

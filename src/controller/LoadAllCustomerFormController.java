@@ -46,8 +46,6 @@ public class LoadAllCustomerFormController {
 
 
     private void loadAllCustomers() throws SQLException, ClassNotFoundException {
-        /*PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("SELECT * FROM customer");
-        ResultSet rst = stm.executeQuery();*/
         ResultSet rst = CrudUtil.execute("SELECT * FROM customer");
         ObservableList<Customer> list = FXCollections.observableArrayList();
         while (rst.next()) {

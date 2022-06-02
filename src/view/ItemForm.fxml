@@ -16,6 +16,6 @@
       <Button layoutX="90.0" layoutY="117.0" mnemonicParsing="false" onAction="#searchItemOnAction" prefHeight="31.0" prefWidth="103.0" text="Search Item" />
       <Button layoutX="91.0" layoutY="165.0" mnemonicParsing="false" onAction="#updateItemOnAction" prefHeight="31.0" prefWidth="103.0" text="Update Item" />
       <Button layoutX="90.0" layoutY="214.0" mnemonicParsing="false" onAction="#deleteItemOnAction" prefHeight="31.0" prefWidth="103.0" text="Delete Item" />
-      <Button layoutX="86.0" layoutY="263.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="114.0" text="Load All Item" />
+      <Button layoutX="86.0" layoutY="263.0" mnemonicParsing="false" onAction="#loadAllItemOnAction" prefHeight="31.0" prefWidth="114.0" text="Load All Item" />
    </children>
 </AnchorPane>

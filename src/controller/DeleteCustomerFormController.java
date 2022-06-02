@@ -9,6 +9,7 @@ import db.DbConnection;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import util.CrudUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,9 +25,7 @@ public class DeleteCustomerFormController {
     public TextField txtPostalCode;
 
     public void txtIdOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("SELECT * FROM customer WHERE custId=?");
-        stm.setObject(1, txtId.getText());
-        ResultSet rst = stm.executeQuery();
+        ResultSet rst = CrudUtil.execute("SELECT * FROM customer WHERE custId=?", txtId.getText());
         if (rst.next()) {
             txtTitle.setText(rst.getString(2));
             txtName.setText(rst.getString(3));
@@ -41,9 +40,8 @@ public class DeleteCustomerFormController {
 
     public void deleteCustomerOnAction(ActionEvent actionEvent) {
         try {
-            PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("DELETE FROM customer WHERE custId=?");
-            stm.setObject(1, txtId.getText());
-            if (stm.executeUpdate() > 0) {
+            boolean isDeleted = CrudUtil.execute("DELETE FROM customer WHERE custId=?", txtId.getText());
+            if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Deleted..!").show();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again").show();

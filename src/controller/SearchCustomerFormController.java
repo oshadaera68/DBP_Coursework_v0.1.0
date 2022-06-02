@@ -5,12 +5,11 @@
 
 package controller;
 
-import db.DbConnection;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import util.CrudUtil;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -25,9 +24,7 @@ public class SearchCustomerFormController {
     public TextField txtPostalCode;
 
     public void searchCustomerOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("SELECT * FROM customer WHERE custId=?");
-        stm.setObject(1, txtId.getText());
-        ResultSet rst = stm.executeQuery();
+        ResultSet rst = CrudUtil.execute("SELECT * FROM customer WHERE custId=?", txtId.getText());
         if (rst.next()) {
             txtTitle.setText(rst.getString(2));
             txtName.setText(rst.getString(3));

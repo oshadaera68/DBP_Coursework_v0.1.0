@@ -5,13 +5,12 @@
 
 package controller;
 
-import db.DbConnection;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import model.Customer;
+import util.CrudUtil;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -25,9 +24,7 @@ public class UpdateCustomerFormController {
     public TextField txtPostalCode;
 
     public void txtIdOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("SELECT * FROM customer WHERE custId=?");
-        stm.setObject(1, txtId.getText());
-        ResultSet rst = stm.executeQuery();
+        ResultSet rst = CrudUtil.execute("SELECT * FROM customer WHERE custId=?", txtId.getText());
         if (rst.next()) {
             txtTitle.setText(rst.getString(2));
             txtName.setText(rst.getString(3));
@@ -44,16 +41,8 @@ public class UpdateCustomerFormController {
         Customer c = new Customer(txtId.getText(), txtTitle.getText(), txtName.getText(), txtAddress.getText(), txtCity.getText(), txtProvince.getText(), txtPostalCode.getText());
 
         try {
-            PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("UPDATE customer SET custTitle=?,custName=?,custAddress=?,city=?,province=?,postalCode=? WHERE custId=?");
-            stm.setObject(1, c.getTitle());
-            stm.setObject(2, c.getName());
-            stm.setObject(3, c.getAddress());
-            stm.setObject(4, c.getCity());
-            stm.setObject(5, c.getProvince());
-            stm.setObject(6, c.getPostalCode());
-            stm.setObject(7, c.getId());
-
-            if (stm.executeUpdate() > 0) {
+            boolean isUpdated = CrudUtil.execute("UPDATE customer SET custTitle=?,custName=?,custAddress=?,city=?,province=?,postalCode=? WHERE custId=?", c.getTitle(), c.getName(), c.getAddress(), c.getCity(), c.getProvince(), c.getPostalCode(), c.getId());
+            if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Updated").show();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again").show();

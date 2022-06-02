@@ -12,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Customer;
+import util.CrudUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -45,8 +46,9 @@ public class LoadAllCustomerFormController {
 
 
     private void loadAllCustomers() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("SELECT * FROM customer");
-        ResultSet rst = stm.executeQuery();
+        /*PreparedStatement stm = DbConnection.getInstance().getConnection().prepareStatement("SELECT * FROM customer");
+        ResultSet rst = stm.executeQuery();*/
+        ResultSet rst = CrudUtil.execute("SELECT * FROM customer");
         ObservableList<Customer> list = FXCollections.observableArrayList();
         while (rst.next()) {
             list.add(new Customer(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5), rst.getString(6), rst.getString(7)));

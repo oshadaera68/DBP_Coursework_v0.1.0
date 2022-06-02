@@ -41,4 +41,11 @@ public class CustomerFormController {
         stage.setTitle("Update Customer");
         stage.show();
     }
+
+    public void loadAllCustomerOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/LoadAllCustomerForm.fxml"))));
+        stage.setTitle("Load All Customer");
+        stage.show();
+    }
 }

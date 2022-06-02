@@ -5,7 +5,6 @@
 
 package controller;
 
-import db.DbConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
@@ -14,7 +13,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.Customer;
 import util.CrudUtil;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -34,7 +32,6 @@ public class LoadAllCustomerFormController {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-
         colCusId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));

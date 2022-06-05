@@ -20,7 +20,11 @@ public class ItemFormController {
         stage.show();
     }
 
-    public void searchItemOnAction(ActionEvent actionEvent) {
+    public void searchItemOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/SearchItemForm.fxml"))));
+        stage.setTitle("Search Item");
+        stage.show();
     }
 
     public void updateItemOnAction(ActionEvent actionEvent) {

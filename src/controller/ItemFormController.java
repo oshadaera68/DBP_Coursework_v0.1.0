@@ -30,9 +30,17 @@ public class ItemFormController {
     public void updateItemOnAction(ActionEvent actionEvent) {
     }
 
-    public void deleteItemOnAction(ActionEvent actionEvent) {
+    public void deleteItemOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DeleteItemForm.fxml"))));
+        stage.setTitle("Delete Item");
+        stage.show();
     }
 
-    public void loadAllItemOnAction(ActionEvent actionEvent) {
+    public void loadAllItemOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/LoadAllItemForm.fxml"))));
+        stage.setTitle("All Items");
+        stage.show();
     }
 }
